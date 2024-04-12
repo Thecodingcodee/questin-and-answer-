@@ -21,7 +21,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Npc1, function (sprite, otherSpr
 })
 info.onCountdownEnd(function () {
     game.gameOver(false)
-    game.setGameOverMessage(false, "GAME OVER!")
+    game.setGameOverMessage(false, "Unknown Ai: filthy human scum thinking you can defeat me now your world will pay")
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Npc2, function (sprite, otherSprite) {
     Dialog_mode = true
@@ -39,7 +39,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Npc2, function (sprite, otherSpr
     pause(2000)
 })
 info.onScore(22, function () {
-    game.gameOver(true)
+    game.setGameOverMessage(true, "AI BAT :You have proven human intelligence against me I shall restore your power as you have proven to me that humans have the ability to improve")
     game.setGameOverEffect(true, effects.confetti)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Npc3, function (sprite, otherSprite) {
@@ -63,22 +63,22 @@ let Mookay: Sprite = null
 let Rosy: Sprite = null
 tiles.setCurrentTilemap(tilemap`level2`)
 let Trent = sprites.create(img`
-    . . . . . . . . . . . . . 
     . . . . f f f f . . . . . 
     . . f f f f f f f f . . . 
-    . f f f c f f f f f f . . 
-    c f f f c c f f f f f f f 
-    c f f f f f f f c f f f f 
-    c c f f e e f f f c c c . 
-    f c c f f e e f f f f f . 
+    . f f f f f f c f f f . . 
+    f f f f f f c c f f f c . 
+    f f f c f f f f f f f c . 
+    c c c f f f e e f f c c . 
+    f f f f f e e f f c c f . 
     f f f b f e e f b f f f . 
-    f f 4 1 f 4 4 f 1 4 f f . 
-    e f e e 4 4 4 4 4 e f . . 
-    e 4 4 4 e 7 7 7 b f e f . 
-    . e 4 4 e 7 7 7 7 f 4 e . 
-    . . e e 6 6 6 6 6 f . . . 
-    . . . f f f f f f f . . . 
-    . . . . . . . f f f . . . 
+    . f 4 1 f 4 4 f 1 4 f . . 
+    . f e 4 4 4 4 4 4 e f . . 
+    . f f f e e e e f f f . . 
+    f e f b 7 7 7 7 b f e f . 
+    e 4 f 7 7 7 7 7 7 f 4 e . 
+    e e f 6 6 6 6 6 6 f e e . 
+    . . . f f f f f f . . . . 
+    . . . f f . . f f . . . . 
     `, SpriteKind.Player)
 tiles.placeOnTile(Trent, tiles.getTileLocation(1, 0))
 Rosy = sprites.create(img`
@@ -101,22 +101,22 @@ Rosy = sprites.create(img`
     `, SpriteKind.Npc1)
 tiles.placeOnTile(Rosy, tiles.getTileLocation(7, 13))
 Mookay = sprites.create(img`
-    . . . . f f f f . . . . 
-    . . f f e e e e f f . . 
-    . f f e e e e e e f f . 
-    f f f f 4 e e e f f f f 
-    f f f 4 4 4 e e f f f f 
-    f f f 4 4 4 4 e e f f f 
-    f 4 e 4 4 4 4 4 4 e 4 f 
-    f 4 4 f f 4 4 f f 4 4 f 
-    f e 4 d d d d d d 4 e f 
-    . f e d d b b d d e f . 
-    . f f e 4 4 4 4 e f f . 
-    e 4 f b 1 1 1 1 b f 4 e 
-    4 d f 1 1 1 1 1 1 f d 4 
-    4 4 f 6 6 6 6 6 6 f 4 4 
-    . . . f f f f f f . . . 
-    . . . f f . . f f . . . 
+    . . . . f f f f f . . . . . . . 
+    . . . f e e e e e f . . . . . . 
+    . . f d d d d e e e f . . . . . 
+    . c d f d d f d e e f f . . . . 
+    . c d f d d f d e e d d f . . . 
+    c d e e d d d d e e b d c . . . 
+    c d d d d c d d e e b d c . f f 
+    c c c c c d d d e e f c . f e f 
+    . f d d d d d e e f f . . f e f 
+    . . f f f f f e e e e f . f e f 
+    . . . . f e e e e e e e f f e f 
+    . . . f e f f e f e e e e f f . 
+    . . . f e f f e f e e e e f . . 
+    . . . f d b f d b f f e f . . . 
+    . . . f d d c d d b b d f . . . 
+    . . . . f f f f f f f f f . . . 
     `, SpriteKind.Npc2)
 tiles.placeOnTile(Mookay, tiles.getTileLocation(11, 6))
 Doggo = sprites.create(img`
@@ -139,7 +139,7 @@ tiles.placeOnTile(Doggo, tiles.getTileLocation(15, 12))
 scene.cameraFollowSprite(Trent)
 Dialog_mode = false
 music.play(music.createSoundEffect(WaveShape.Sine, 5000, 0, 255, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.LoopingInBackground)
-info.startCountdown(35)
+info.startCountdown(60)
 forever(function () {
     if (Dialog_mode == false) {
         controller.moveSprite(Trent)
