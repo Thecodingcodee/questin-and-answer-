@@ -4,7 +4,8 @@
     "dependencies": {
         "device": "*",
         "arcade-story": "github:microsoft/arcade-storytelling#v1.0.3",
-        "servo": "*"
+        "servo": "*",
+        "arcade-minimap": "github:microsoft/arcade-minimap#v0.6.1"
     },
     "files": [
         "main.blocks",
