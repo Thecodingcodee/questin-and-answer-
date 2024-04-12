@@ -39,7 +39,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Npc2, function (sprite, otherSpr
     pause(2000)
 })
 info.onScore(22, function () {
-    game.setGameOverMessage(true, "AI BAT :You have proven human intelligence against me I shall restore your power as you have proven to me that humans have the ability to improve")
+    game.setGameOverMessage(true, "Ai bat no no you have defeated me here's you thing augh ")
     game.setGameOverEffect(true, effects.confetti)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Npc3, function (sprite, otherSprite) {
